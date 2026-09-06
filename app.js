@@ -70,18 +70,4 @@ subToggleImages.forEach(subImg => {
 });
 
 
-// Ждем, пока вся страница полностью загрузится
-window.addEventListener('load', () => {
-  // Находим все маленькие картинки, у которых есть путь к большим изображениям
-  const subImages = document.querySelectorAll('.sub-toggle-img[data-subimg]');
-  
-  subImages.forEach(img => {
-    const src = img.getAttribute('data-subimg');
-    if (src) {
-      // Создаем виртуальную картинку "в уме" браузера, чтобы он её скачал и закэшировал
-      const preloadImg = new Image();
-      preloadImg.src = src;
-    }
-  });
-  console.log(`Фоновая загрузка ${subImages.length} картинок успешно запущена!`);
-});
+
